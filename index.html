@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Sumu ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#120018,#3b003b,#000);
+    color:white;
+}
+
+.slide{
+    height:100vh;
+    width:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+    animation:fade 1s;
+}
+
+.active{
+    display:flex;
+}
+
+h1{
+    font-size:55px;
+    color:#ff7eb9;
+    text-shadow:0 0 25px #ff1493;
+}
+
+p{
+    max-width:750px;
+    font-size:28px;
+    line-height:1.5;
+    text-shadow:0 0 15px #fff;
+}
+
+button,input{
+    padding:15px 25px;
+    border-radius:30px;
+    border:none;
+    margin-top:25px;
+    font-size:20px;
+}
+
+button{
+    background:#ff4f9a;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 20px #ff4f9a;
+}
+
+input{
+    text-align:center;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4f9a;
+    animation:float 6s infinite;
+    font-size:25px;
+}
+
+@keyframes fade{
+from{opacity:0; transform:scale(.8);}
+to{opacity:1; transform:scale(1);}
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+.glow{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{text-shadow:0 0 40px #ff1493;}
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:30%">❤️</div>
+<div class="heart" style="left:70%">❤️</div>
+<div class="heart" style="left:90%">❤️</div>
+
+
+
+<!-- PASSWORD -->
+<div class="slide active" id="login">
+
+<h1 class="glow">For My Mohtarma ❤️</h1>
+
+<p>
+A little surprise waiting for you...
+</p>
+
+<input id="pass" placeholder="Enter password">
+
+<button onclick="check()">Enter</button>
+
+<p id="wrong"></p>
+
+</div>
+
+
+
+<!-- SLIDE 1 -->
+<div class="slide" id="s1">
+
+<h1>Happy Birthday Sumu ❤️</h1>
+
+<p>
+Happy Birthday to the most special person in my life.
+Today is all about celebrating you and the happiness you bring.
+</p>
+
+<button onclick="next(2)">Next</button>
+
+</div>
+
+
+
+<!-- SLIDE 2 -->
+<div class="slide" id="s2">
+
+<h1>Your Beautiful Eyes ✨</h1>
+
+<p>
+Your black eyes that magically turn brown in the light are honestly one of my favourite things about you.
+But what I love even more is your cutest personality that makes you so special.
+</p>
+
+<button onclick="next(3)">Next</button>
+
+</div>
+
+
+
+<!-- SLIDE 3 -->
+<div class="slide" id="s3">
+
+<h1>You Make Life Fun ❤️</h1>
+
+<p>
+I actually like your drama 😂
+It makes everything more interesting.
+You bring so much fun, laughter and happiness into my life.
+</p>
+
+<button onclick="next(4)">Next</button>
+
+</div>
+
+
+
+<!-- SLIDE 4 -->
+<div class="slide" id="s4">
+
+<h1>Happy Birthday My Sumu 🎂</h1>
+
+<p>
+I hope your day is filled with smiles, love and everything beautiful.
+You deserve the best.
+</p>
+
+<button onclick="next(5)">Next</button>
+
+</div>
+
+
+
+<!-- SLIDE 5 -->
+<div class="slide" id="s5">
+
+<h1>Thank You ❤️</h1>
+
+<p>
+Thank you for bearing with me for the last 6 years.
+Thank you for all the memories, patience and moments we shared.
+I am really grateful for you.
+</p>
+
+<h1>❤️</h1>
+
+</div>
+
+
+
+<script>
+
+function check(){
+
+let p=document.getElementById("pass").value;
+
+if(p.toLowerCase()=="mohtarma"){
+
+document.getElementById("login").classList.remove("active");
+document.getElementById("s1").classList.add("active");
+
+}
+
+else{
+
+document.getElementById("wrong").innerHTML="Wrong password 😭";
+
+}
+
+}
+
+
+function next(n){
+
+document.querySelectorAll(".slide").forEach(x=>{
+x.classList.remove("active");
+});
+
+document.getElementById("s"+n).classList.add("active");
+
+}
+
+
+</script>
+
+
+</body>
+</html>
